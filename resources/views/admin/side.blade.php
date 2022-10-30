@@ -73,6 +73,7 @@
             </a>
 
           </li>
+
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
@@ -89,6 +90,7 @@
               </ul>
             </div>
           </li>
+
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{URL('Category')}}">
               <span class="menu-icon">
@@ -97,62 +99,71 @@
               <span class="menu-title">Category</span>
             </a>
           </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/tables/basic-table.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
-              </span>
-              <span class="menu-title">Tables</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-              </span>
-              <span class="menu-title">Charts</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/icons/mdi.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
-              </span>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
+
+   
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
                 <i class="mdi mdi-security"></i>
               </span>
-              <span class="menu-title">User Pages</span>
+              <span class="menu-title">Order</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+      <li class="nav-item"> <a class="nav-link" href="{{URL('show_all_order')}}"> All Order </a></li>
+      <li class="nav-item"> <a class="nav-link" href="{{URL('last_orders')}}"> Last Orders </a></li>
               </ul>
             </div>
           </li>
+
+     
+
+
+
+
           <li class="nav-item menu-items">
-            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+            <a class="nav-link" data-toggle="collapse" href="#user_admin" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
+                <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Documentation</span>
+              <span class="menu-title">Users&&Admin</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="user_admin">
+              <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{URL('Users')}}">Users</a></li>
+           @if(Auth()->user()->usertype == 2)
+                <li class="nav-item"> <a class="nav-link" href="{{URL('show_admin')}}">Show Admin</a></li>
+            @endif
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+              </ul>
+            </div>
           </li>
+
+        </ul>
+     
         </ul>
 
      
+
+
+
+
+
+
+
+
+
+
+
+
+
         </nav>
  
 
         <!-- main-panel ends -->
    
       <!-- partial -->
+
+

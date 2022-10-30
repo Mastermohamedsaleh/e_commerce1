@@ -49,8 +49,10 @@ class HomeController extends Controller
    $total_prodect = Prodect::all()->count();
    $total_category = Category::all()->count();
    $total_user = User::all()->count();
-     
-    return view('admin.home',compact('total_prodect','total_category','total_user'));
+   $total_order = Order::all()->count();
+   
+   $order_not_payment = Order::where('payment_status','=','Not Payment')->count();     
+return view('admin.home',compact('total_prodect','total_category','total_user','total_order','order_not_payment'));
   }
 
 
@@ -191,8 +193,7 @@ public function cancle_order($id){
 
  
 public function search_prodect_mainpage(Request $request){
- 
-   $prodects = Prodect::where('Name_Prodect','=',$request->search)->orWhere('price','=',$request->search)->get();
+   $prodects = Prodect::where('Name_Prodect','LIKE','%'.$request->search.'%')->orWhere('price','LIKE','%'.$request->search.'%')->get();
    return view('user.home.userpage',compact('prodects'));
 }
 

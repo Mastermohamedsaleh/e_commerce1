@@ -22,6 +22,15 @@
     </div>
 @endif
 
+@if (Session::has('pay_delivery'))
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <i class="fa fa-times"></i>
+        </button>
+        {{ session('pay_delivery') }}
+    </div>
+@endif
+
 
 <div class="container">
     <div class="col-lg-8 border p-3 main-section bg-white">
@@ -59,20 +68,31 @@
                             <h6>Quantity :</h6>
 
 
-<form action="{{route('Add_Cart',$Prodects->id)}}" method="POST" >
+<form  method="POST" >
     @csrf
              <input type="number" min="1" name="quantity" class="form-control text-center w-100" value="1">
                         </div>
                         <div class="col-lg-12 mt-3">
                             <div class="row">
                                 <div class="col-lg-6 pb-2">
-                      <button type="submit" class="btn btn-danger w-100">Add To Cart</a>
+                      <button type="submit"   formaction="{{URL('Add_Cart',$Prodects->id)}}"  class="btn btn-danger w-100">Add To Cart</a>
                                 </div>
                                 <div class="col-lg-6">
-                                    <a href="#" class="btn btn-success w-100">Shop Now</a>
-                                </div>
 
+    <button  type="submit" name="work 1" formaction="{{URL('pay_delivery',$Prodects->id)}}" class="btn btn-success w-100">Pay When Delivaly</button>
+
+
+
+       </div>
 </form>
+
+
+
+
+
+
+
+
 
                             </div>
                         </div>
@@ -91,6 +111,7 @@
 
 <div class="container mt-4">
     <a href="{{URL('cash_delivery')}}" class="btn btn-danger">Cash on Delivery</a>
+
 
 </div>
 

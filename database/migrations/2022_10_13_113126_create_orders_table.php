@@ -19,7 +19,16 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('address');
-            $table->string('user_id');
+
+
+
+            $table->unsignedBigInteger('user_id');
+
+
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+       
 
             $table->string('Name_Prodect');
             $table->string('quantity');

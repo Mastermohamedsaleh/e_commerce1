@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Category; 
 use App\Models\Prodect; 
 use App\Models\Cart; 
+use App\Models\Order; 
 use Illuminate\Support\Facades\Auth;
+
 
 use PDF;
 
@@ -17,9 +19,10 @@ use File;
 class ProdectController extends Controller
 {
      
+//   use  in this index piginate(3) to make prodect 3 only
 
-    public function index(){
-        $Prodects = Prodect::all();
+    public function index(){ 
+        $Prodects = Prodect::all();              
         return  view('admin.prodects.index',compact('Prodects'));
     }
     public function create(){
@@ -125,6 +128,20 @@ class ProdectController extends Controller
     }
 
      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //  Add Cart
 
     public function Add_Cart(request $request,$id){
@@ -193,14 +210,26 @@ class ProdectController extends Controller
     }
 
 
+// all prodect in page 
+
+
+public function Prodect_main_page(){
+
+    $prodects  =   Prodect::all();
+   
+   return  view('user.home.Prodect_main_page',compact('prodects'));
+
+}
 
 
 
+public function Prodect_sport(){
 
+     $prodects  = Prodect::where('Category_id','=','6')->get();
+     
+     return view('user.home.prodect_sport',compact('prodects')); 
 
-
-
-
+}
 
      
 }

@@ -30,7 +30,7 @@ class HomeController extends Controller
   public function index(){
       
     $prodects = Prodect::all(); 
-    return view('user.home.userpage',compact('prodects'));
+    return view('user.home.index',compact('prodects'));
   }
      
 
@@ -42,7 +42,7 @@ class HomeController extends Controller
          
   if($usertype == 0){
     $prodects = Prodect::all(); 
-     return view('user.home.userpage',compact('prodects'));
+     return view('user.home.index',compact('prodects'));
   }else{
 
 
@@ -194,7 +194,7 @@ public function cancle_order($id){
  
 public function search_prodect_mainpage(Request $request){
    $prodects = Prodect::where('Name_Prodect','LIKE','%'.$request->search.'%')->orWhere('price','LIKE','%'.$request->search.'%')->get();
-   return view('user.home.userpage',compact('prodects'));
+   return view('user.home.index',compact('prodects'));
 }
 
 

@@ -410,9 +410,7 @@
                            <a href="{{URL('detiles',$p->id)}}" class="option1">
                             Detiles
                            </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
+                     
                         </div>
                      </div>
                      <div class="img-box">

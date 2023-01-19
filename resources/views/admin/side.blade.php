@@ -84,9 +84,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{URL('Prodect')}}">Add Prodect</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL('Prodect_index')}}">Prodect</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
           </li>
@@ -136,7 +134,6 @@
            @if(Auth()->user()->usertype == 2)
                 <li class="nav-item"> <a class="nav-link" href="{{URL('show_admin')}}">Show Admin</a></li>
             @endif
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
           </li>
